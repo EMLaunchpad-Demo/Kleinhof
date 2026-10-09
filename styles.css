@@ -1,0 +1,316 @@
+/* =========================================================================
+   't Kleinhof Vechmaal — gedeelde stylesheet
+   Rustig en ambachtelijk: foto's in de hoofdrol, gewone tekstkolommen,
+   dunne lijnen. Huisstijl van kleinhof.be (logo-groen, Fraunces +
+   Nunito Sans, handschrift van het logo). Vanilla CSS, geen frameworks.
+   ========================================================================= */
+
+/* ---------- 1. Kleuren & maten ----------------------------------------- */
+:root {
+  --paper:    #f6f2e9;   /* achtergrond, ongebleekt papier */
+  --paper-2:  #ece6d8;   /* afwisselende band */
+  --ink:      #34302a;   /* lopende tekst */
+  --soil:     #2b261f;   /* titels */
+  --muted:    #6e665a;
+  --line:     #d6cdb9;
+  --green:    #56722a;   /* links en knoppen, gedempt bladgroen */
+  --green-d:  #445c1f;
+  --lime:     #8cc63f;   /* logo-groen, spaarzaam */
+  --footer:   #2f3426;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-hand:    'Sue Ellen Francisco', 'Comic Sans MS', cursive;
+
+  --container: 1120px;
+  --narrow: 680px;
+  --gutter: clamp(1.1rem, 4vw, 2rem);
+  --section-y: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* ---------- 2. Basis ---------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 1.075rem;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+::selection { background: #dfe9c8; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--soil);
+  line-height: 1.15;
+  letter-spacing: -.005em;
+}
+h1 { font-size: clamp(2.3rem, 5.5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.05rem; }
+p { max-width: 64ch; }
+p + p { margin-top: 1.1em; }
+strong { color: var(--soil); font-weight: 700; }
+
+.text-link { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.text-link:hover { color: var(--green-d); text-decoration-thickness: 2px; }
+
+.label {
+  display: block;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .8rem;
+}
+.hand { font-family: var(--font-hand); font-size: 1.5rem; line-height: 1.2; color: var(--soil); }
+.intro { font-size: 1.2rem; line-height: 1.65; }
+
+/* ---------- 3. Layout --------------------------------------------------- */
+.container { width: min(100% - var(--gutter) * 2, var(--container)); margin-inline: auto; }
+.narrow { width: min(100% - var(--gutter) * 2, var(--narrow)); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+.section + .section { border-top: 1px solid var(--line); }
+.band { background: var(--paper-2); border-top: 0 !important; }
+.band + .section { border-top: 0; }
+
+.cols { display: grid; gap: clamp(2rem, 5vw, 4rem); }
+@media (min-width: 860px) {
+  .cols { grid-template-columns: 1fr 1fr; align-items: center; }
+  .cols--top { align-items: start; }
+  .cols--text-wide { grid-template-columns: 5fr 7fr; }
+  .cols--photo-wide { grid-template-columns: 7fr 5fr; }
+  .cols--flip > :first-child { order: 2; }
+}
+
+/* ---------- 4. Knoppen -------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: .8rem 1.4rem;
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700; font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid var(--green);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.btn:hover { background: var(--green-d); border-color: var(--green-d); }
+.btn--plain { background: transparent; color: var(--soil); border-color: var(--soil); }
+.btn--plain:hover { background: var(--soil); color: var(--paper); border-color: var(--soil); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; margin-top: 1.8rem; }
+
+/* ---------- 5. Header --------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; }
+.brand img { width: 50px; height: 50px; border-radius: 3px; }
+.brand__name { font-family: var(--font-hand); font-size: 1.7rem; line-height: 1; color: var(--soil); }
+.brand__sub { display: block; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+
+.nav__links { display: flex; align-items: center; gap: 1.6rem; }
+.nav__links a:not(.btn) {
+  text-decoration: none;
+  font-weight: 600; font-size: .98rem;
+  color: var(--ink);
+  padding-block: .3rem;
+  border-bottom: 1px solid transparent;
+}
+.nav__links a:not(.btn):hover { border-color: var(--ink); }
+.nav__links a[aria-current="page"] { border-color: var(--green); color: var(--soil); }
+.nav__links .btn { padding: .55rem 1.1rem; }
+
+.nav__toggle { display: none; font-weight: 700; padding: .5rem .2rem; border-bottom: 1px solid var(--ink); }
+.nav-backdrop { display: none; }
+
+@media (max-width: 900px) {
+  .nav__toggle { display: block; }
+  .nav__links {
+    display: none;
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    padding: .6rem var(--gutter) 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__links a:not(.btn) { width: 100%; padding: .75rem 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+  .nav__links a[aria-current="page"] { color: var(--green); }
+  .nav__links .btn { margin-top: 1rem; }
+  .nav-open .nav__links { display: flex; }
+}
+
+/* ---------- 6. Foto's --------------------------------------------------- */
+.photo { margin: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+.photo figcaption { font-family: var(--font-hand); font-size: 1.4rem; color: var(--ink); margin-top: .5rem; line-height: 1.2; }
+.photos + .actions { margin-top: 2.4rem; }
+.photo--tall img { aspect-ratio: 4 / 5; }
+.photo--wide img { aspect-ratio: 16 / 9; }
+.photo--land img { aspect-ratio: 4 / 3; }
+
+.hero-photo { position: relative; }
+.hero-photo img { width: 100%; height: clamp(300px, 58vh, 620px); object-fit: cover; object-position: center 60%; }
+.hero-photo figcaption {
+  position: absolute; right: var(--gutter); bottom: .8rem;
+  font-family: var(--font-hand); font-size: 1.25rem; color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .45);
+}
+
+.photos { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 860px) { .photos--4 { grid-template-columns: repeat(4, 1fr); } }
+.photos .photo img { aspect-ratio: 1 / 1; }
+
+/* ---------- 7. Home intro ---------------------------------------------- */
+.home-intro { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.home-intro h1 { max-width: 12ch; }
+.home-intro .intro { margin-top: .2rem; }
+
+.signature { font-family: var(--font-hand); font-size: 1.8rem; color: var(--soil); margin-top: 1.4rem; display: block; }
+
+/* ---------- 8. Lijst "op de boerderij" --------------------------------- */
+.farm-list { border-top: 1px solid var(--line); }
+.farm-list__item {
+  display: grid; gap: .4rem 2rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 760px) { .farm-list__item { grid-template-columns: 220px 1fr; } }
+.farm-list__item h3 { font-size: 1.25rem; }
+.farm-list__item p { color: var(--ink); }
+.farm-list--2 { display: grid; gap: 0 3rem; border-top: 0; }
+@media (min-width: 860px) {
+  .farm-list--2 { grid-template-columns: 1fr 1fr; }
+  .farm-list--2 .farm-list__item { grid-template-columns: 1fr; }
+}
+.farm-list--2 .farm-list__item:nth-child(-n+2) { border-top: 1px solid var(--line); }
+@media (max-width: 859px) { .farm-list--2 .farm-list__item:nth-child(2) { border-top: 0; } }
+
+/* Rijen met foto (bio-boerderij) */
+.topic { display: grid; gap: 1.4rem 3rem; padding-block: clamp(2rem, 5vw, 3rem); border-bottom: 1px solid var(--line); }
+.topic:first-child { padding-top: 0; }
+@media (min-width: 860px) { .topic { grid-template-columns: 5fr 7fr; align-items: center; } .topic--flip > :first-child { order: 2; } }
+.topic h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); margin-bottom: .8rem; }
+
+/* ---------- 9. Pagina-kop (subpagina's) -------------------------------- */
+.page-head { padding: clamp(2.6rem, 7vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem); }
+.page-head h1 { max-width: 18ch; }
+.page-head .intro { margin-top: 1rem; }
+.crumbs { font-size: .9rem; color: var(--muted); margin-bottom: 1.2rem; }
+.crumbs a { color: var(--muted); }
+
+/* ---------- 10. Verhaal (visie) ---------------------------------------- */
+.letter p { font-size: 1.15rem; line-height: 1.8; }
+.letter p + p { margin-top: 1.2em; }
+.letter .photo { margin-block: 2.4rem; }
+.quote {
+  margin: 2.4rem 0;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  line-height: 1.45;
+  color: var(--soil);
+}
+
+/* ---------- 11. Tabel (spelt) ------------------------------------------ */
+.table-wrap { overflow-x: auto; }
+table.plain { width: 100%; border-collapse: collapse; font-size: 1rem; }
+table.plain caption { text-align: left; font-family: var(--font-display); font-size: 1.2rem; color: var(--soil); padding-bottom: .8rem; }
+table.plain th, table.plain td { padding: .7rem .4rem; text-align: left; border-bottom: 1px solid var(--line); }
+table.plain thead th { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; border-bottom: 2px solid var(--soil); }
+table.plain td:not(:first-child), table.plain th:not(:first-child) { text-align: right; }
+
+/* ---------- 12. Reserveren --------------------------------------------- */
+.steps { list-style: none; display: grid; gap: 1.4rem 3rem; counter-reset: s; border-top: 1px solid var(--line); padding-top: 1.6rem; }
+@media (min-width: 860px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li { counter-increment: s; }
+.steps li::before { content: counter(s) "."; font-family: var(--font-display); font-size: 1.6rem; color: var(--green); display: block; line-height: 1; margin-bottom: .5rem; }
+.steps h3 { margin-bottom: .3rem; }
+
+.res-layout { display: grid; gap: 2.4rem; align-items: start; }
+@media (min-width: 1040px) { .res-layout { grid-template-columns: 260px 1fr; gap: 3.5rem; } }
+.res-notes > div { padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+.res-notes > div:first-child { border-top: 1px solid var(--line); }
+.res-notes h4 { margin-bottom: .2rem; }
+.res-notes p { font-size: .97rem; }
+.res-frame { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 3px; min-height: 400px; }
+.res-frame iframe { display: block; width: 100%; min-height: 1100px; border: 0; }
+.res-frame__loading { position: absolute; top: 3rem; left: 0; right: 0; text-align: center; color: var(--muted); transition: opacity .3s; pointer-events: none; }
+.res-frame.is-loaded .res-frame__loading { opacity: 0; }
+
+/* ---------- 13. Formulieren -------------------------------------------- */
+.form { display: grid; gap: 1rem; }
+.form-row { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: .3rem; }
+.field label { font-weight: 700; font-size: .95rem; color: var(--soil); }
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: .75rem .9rem;
+  font: inherit; font-size: 1rem; color: var(--ink);
+  background: #fffdf8;
+  border: 1px solid #c9bfa8;
+  border-radius: 3px;
+}
+.field textarea { min-height: 140px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(86, 114, 42, .15); }
+.field__err { display: none; font-size: .88rem; color: #a2402a; }
+.field.has-error input, .field.has-error textarea { border-color: #a2402a; }
+.field.has-error .field__err { display: block; }
+.form__note { font-size: .9rem; color: var(--muted); }
+.form-success { display: none; padding: 1rem 0; font-weight: 700; color: var(--green-d); }
+.form.is-sent .form-success { display: block; }
+.form.is-sent > :not(.form-success) { display: none; }
+.form .btn { justify-self: start; }
+
+/* ---------- 14. Contact ------------------------------------------------- */
+.address { font-style: normal; }
+.address dl { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.address dl > div { display: grid; grid-template-columns: 150px 1fr; gap: 1rem; padding-block: .85rem; border-bottom: 1px solid var(--line); }
+.address dt { color: var(--muted); font-size: .95rem; }
+.address dd a { color: var(--soil); font-weight: 700; text-decoration: none; }
+.address dd a:hover { color: var(--green); text-decoration: underline; }
+@media (max-width: 480px) { .address dl > div { grid-template-columns: 1fr; gap: 0; } }
+.map iframe { width: 100%; height: clamp(300px, 40vw, 440px); border: 0; display: block; }
+
+/* ---------- 15. Prose (privacy) ---------------------------------------- */
+.prose h2 { font-size: 1.5rem; margin: 2.2rem 0 .6rem; }
+.prose ul { list-style: disc; padding-left: 1.3rem; margin-top: .8rem; }
+.prose ul li + li { margin-top: .3rem; }
+.prose a { color: var(--green); font-weight: 700; }
+
+/* ---------- 16. Footer -------------------------------------------------- */
+.site-footer { background: var(--footer); color: #cfd1c3; padding-top: clamp(3rem, 6vw, 4.5rem); font-size: .98rem; }
+.site-footer a { color: #e8e9de; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.footer__grid { display: grid; gap: 2rem; }
+@media (min-width: 720px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; } }
+.site-footer .brand__name { color: #f4f1e6; }
+.site-footer .brand__sub { color: #aeb39e; }
+.footer__about { margin-top: 1rem; max-width: 34ch; }
+.site-footer h4 { font-family: var(--font-body); font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #f4f1e6; margin-bottom: .8rem; }
+.footer__links { display: grid; gap: .35rem; }
+.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; margin-top: 2.6rem; padding-block: 1.3rem; border-top: 1px solid rgba(255, 255, 255, .12); font-size: .88rem; color: #aeb39e; }
+
+/* ---------- 17. Hulpklassen -------------------------------------------- */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.muted { color: var(--muted); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
