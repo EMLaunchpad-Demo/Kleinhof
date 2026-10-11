@@ -197,6 +197,73 @@ strong { color: var(--soil); font-weight: 700; }
 .farm-list--2 .farm-list__item:nth-child(-n+2) { border-top: 1px solid var(--line); }
 @media (max-width: 859px) { .farm-list--2 .farm-list__item:nth-child(2) { border-top: 0; } }
 
+/* Onderwerpen met foto's (bio-boerderij): klein fotootje naast de tekst,
+   een regel "Bekijk foto's", en de lijst met foto's (zonder JS via :target) */
+.farm-list__item.has-photos { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .6rem 1.4rem; }
+.farm-list__text { flex: 1 1 0; min-width: 0; }
+.farm-list__text h3 { margin-bottom: .4rem; }
+.farm-list__thumb { flex: 0 0 auto; width: 104px; margin-top: .3rem; }
+.farm-list__thumb img { width: 104px; height: 78px; object-fit: cover; border-radius: 2px; }
+@media (max-width: 420px) {
+  .farm-list__thumb, .farm-list__thumb img { width: 76px; }
+  .farm-list__thumb img { height: 58px; }
+}
+.photo-link {
+  display: inline-block; margin-top: .55rem;
+  font-size: .95rem; font-weight: 700; color: var(--green);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.photo-link:hover { color: var(--green-d); text-decoration-thickness: 2px; }
+.photo-link__count { font-weight: 400; color: var(--muted); }
+.farm-list__thumb:hover img { opacity: .88; }
+
+.topic-photos { display: none; }
+.topic-photos:target {
+  display: grid; flex-basis: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: .9rem; padding-top: .6rem;
+  scroll-margin-top: 90px;
+}
+.topic-photos img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
+.topic-photos span { display: block; font-family: var(--font-hand); font-size: 1.15rem; line-height: 1.2; margin-top: .3rem; }
+
+/* Fotovenster (dialog), opent vanuit scripts.js */
+html.lightbox-open { overflow: hidden; }
+.lightbox {
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0;
+  background: transparent; color: var(--ink);
+  overscroll-behavior: contain; touch-action: pan-y pinch-zoom;
+}
+.lightbox button { touch-action: manipulation; }
+.lightbox::backdrop { background: rgba(43, 38, 31, .86); }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox__panel {
+  display: flex; flex-direction: column;
+  width: min(100%, 1080px); max-height: 100%;
+  background: var(--paper);
+  padding: .9rem clamp(1rem, 3vw, 1.6rem) 1.1rem;
+}
+@media (min-width: 760px) { .lightbox__panel { width: min(100% - 4rem, 1080px); max-height: calc(100% - 4rem); border-radius: 3px; } }
+.lightbox__bar { display: flex; align-items: baseline; gap: 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--line); }
+.lightbox__title { font-family: var(--font-display); font-size: 1.25rem; color: var(--soil); flex: 1 1 auto; min-width: 0; }
+.lightbox__count { font-size: .9rem; color: var(--muted); white-space: nowrap; }
+.lightbox__btn {
+  font-weight: 700; font-size: .95rem; color: var(--soil);
+  padding: .45rem .2rem; border-bottom: 1px solid currentColor;
+  white-space: nowrap;
+}
+.lightbox__btn:hover { color: var(--green); }
+.lightbox__btn[disabled] { opacity: .35; cursor: default; color: var(--muted); }
+.lightbox__figure { margin: .9rem 0 0; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; touch-action: pan-y pinch-zoom; }
+.lightbox__img {
+  width: 100%; height: auto; max-height: calc(100vh - 12.5rem); max-height: calc(100dvh - 12.5rem);
+  object-fit: contain; background: var(--paper-2); border-radius: 2px;
+}
+.lightbox__figure figcaption { font-family: var(--font-hand); font-size: 1.4rem; line-height: 1.2; color: var(--ink); margin-top: .5rem; min-height: 1.2em; }
+.lightbox__nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: .6rem; padding-top: .6rem; border-top: 1px solid var(--line); }
+.lightbox__nav[hidden] { display: none; }
+
 /* Rijen met foto (bio-boerderij) */
 .topic { display: grid; gap: 1.4rem 3rem; padding-block: clamp(2rem, 5vw, 3rem); border-bottom: 1px solid var(--line); }
 .topic:first-child { padding-top: 0; }

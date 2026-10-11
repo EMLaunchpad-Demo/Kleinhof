@@ -61,30 +61,91 @@
           </div>
         </div>
 
+        <!-- Foto's per onderwerp staan in afbeeldingen/galerij/. Met JS opent een klik een fotovenster (scripts.js); zonder JS toont #fotos-... de lijst met foto's. -->
         <div class="farm-list farm-list--2 mt-2">
-          <div class="farm-list__item" id="koeien">
-            <h3>De koeien</h3>
-            <p>Maak kennis met onze Hereford en Aberdeen Angus koeien. Beide rassen kunnen met enkel gras en hooi gehouden worden.</p>
+          <div class="farm-list__item has-photos" id="koeien">
+            <div class="farm-list__text">
+              <h3>De koeien</h3>
+              <p>Maak kennis met onze Hereford en Aberdeen Angus koeien. Beide rassen kunnen met enkel gras en hooi gehouden worden.</p>
+              <a class="photo-link" href="#fotos-koeien" data-gallery="fotos-koeien">Bekijk foto's <span class="photo-link__count">(4)</span></a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-koeien" data-gallery="fotos-koeien" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/koeien-1-klein.webp" alt="" width="360" height="203" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-koeien" data-title="De koeien" aria-label="Foto's: de koeien">
+              <li><a href="afbeeldingen/galerij/koeien-1.webp" data-width="1600" data-height="900"><img src="afbeeldingen/galerij/koeien-1-klein.webp" alt="Twee zwarte Aberdeen Angus-runderen en een roodbruine Hereford met witte kop aan de draad in de wei" width="360" height="203" loading="lazy" /></a><span>Aberdeen Angus en Hereford</span></li>
+              <li><a href="afbeeldingen/galerij/koeien-2.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/koeien-2-klein.webp" alt="Een Aberdeen Angus en een Hereford grazen tussen de bomen" width="360" height="217" loading="lazy" /></a><span>tussen de bomen</span></li>
+              <li><a href="afbeeldingen/galerij/koeien-3.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/koeien-3-klein.webp" alt="Een zwarte Aberdeen Angus aan de afsluiting in het hoge gras" width="360" height="217" loading="lazy" /></a><span>Aberdeen Angus</span></li>
+              <li><a href="afbeeldingen/galerij/koeien-4.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/koeien-4-klein.webp" alt="Kop van de Aberdeen Angus-stier met neusring" width="360" height="217" loading="lazy" /></a><span>de Angus-stier</span></li>
+            </ul>
           </div>
-          <div class="farm-list__item" id="varkens">
-            <h3>De varkens</h3>
-            <p>Berkshire varkens zijn het oudste Engelse varkensras, van origine gefokt in de regio van het graafschap Berkshire.</p>
+          <div class="farm-list__item has-photos" id="varkens">
+            <div class="farm-list__text">
+              <h3>De varkens</h3>
+              <p>Berkshire varkens zijn het oudste Engelse varkensras, van origine gefokt in de regio van het graafschap Berkshire.</p>
+              <a class="photo-link" href="#fotos-varkens" data-gallery="fotos-varkens">Bekijk foto's <span class="photo-link__count">(5)</span></a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-varkens" data-gallery="fotos-varkens" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/varkens-1-klein.webp" alt="" width="360" height="217" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-varkens" data-title="De varkens" aria-label="Foto's: de varkens">
+              <li><a href="afbeeldingen/galerij/varkens-1.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/varkens-1-klein.webp" alt="Zwarte Berkshire-biggetjes lopen vrij over het gras en het erf" width="360" height="217" loading="lazy" /></a><span>biggetjes in de buitenlucht</span></li>
+              <li><a href="afbeeldingen/galerij/varkens-2.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/varkens-2-klein.webp" alt="Een Berkshire-zeug met haar biggen in de modder" width="360" height="217" loading="lazy" /></a><span>in de modder</span></li>
+              <li><a href="afbeeldingen/galerij/varkens-3.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/varkens-3-klein.webp" alt="Berkshire-varkens eten vers gras uit de voederbak" width="360" height="217" loading="lazy" /></a><span>vers gras</span></li>
+              <li><a href="afbeeldingen/galerij/varkens-4.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/varkens-4-klein.webp" alt="Een zeug met een nest drinkende biggen" width="360" height="217" loading="lazy" /></a><span>de biggen drinken</span></li>
+              <li><a href="afbeeldingen/galerij/varkens-5.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/varkens-5-klein.webp" alt="Twee zeugen liggen in de zon tussen het snoeihout" width="360" height="217" loading="lazy" /></a><span>zeugen in de zon</span></li>
+            </ul>
           </div>
-          <div class="farm-list__item" id="hoogstam">
-            <h3>De hoogstamweide</h3>
-            <p>De hoogstamweide voorziet ons en de rest van de familie van kersen, pruimen, peren en appels.</p>
+          <div class="farm-list__item has-photos" id="hoogstam">
+            <div class="farm-list__text">
+              <h3>De hoogstamweide</h3>
+              <p>De hoogstamweide voorziet ons en de rest van de familie van kersen, pruimen, peren en appels.</p>
+              <a class="photo-link" href="#fotos-hoogstam" data-gallery="fotos-hoogstam">Bekijk de foto</a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-hoogstam" data-gallery="fotos-hoogstam" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/hoogstamweide-1-klein.webp" alt="" width="360" height="217" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-hoogstam" data-title="De hoogstamweide" aria-label="Foto's: de hoogstamweide">
+              <li><a href="afbeeldingen/galerij/hoogstamweide-1.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/hoogstamweide-1-klein.webp" alt="Een mand appels van de hoogstambomen en een fles appelsap" width="360" height="217" loading="lazy" /></a><span>appels en appelsap van de hoogstambomen</span></li>
+            </ul>
           </div>
-          <div class="farm-list__item" id="bijen">
-            <h3>De bijen</h3>
-            <p>Onze bijen worden gehuisvest in zelfgemaakte Warrékasten. Het Warré-principe kenmerkt zich door een relatief klein formaat van bakken die hoog gestapeld worden.</p>
+          <div class="farm-list__item has-photos" id="bijen">
+            <div class="farm-list__text">
+              <h3>De bijen</h3>
+              <p>Onze bijen worden gehuisvest in zelfgemaakte Warrékasten. Het Warré-principe kenmerkt zich door een relatief klein formaat van bakken die hoog gestapeld worden.</p>
+              <a class="photo-link" href="#fotos-bijen" data-gallery="fotos-bijen">Bekijk foto's <span class="photo-link__count">(4)</span></a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-bijen" data-gallery="fotos-bijen" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/bijen-1-klein.webp" alt="" width="360" height="217" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-bijen" data-title="De bijen" aria-label="Foto's: de bijen">
+              <li><a href="afbeeldingen/galerij/bijen-1.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/bijen-1-klein.webp" alt="Een zelfgemaakte Warrékast met kijkvensters waarachter de raten te zien zijn" width="360" height="217" loading="lazy" /></a><span>een Warrékast</span></li>
+              <li><a href="afbeeldingen/galerij/bijen-2.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/bijen-2-klein.webp" alt="Bijen aan het werk op de raten, gezien door het kijkvenster van de kast" width="360" height="217" loading="lazy" /></a><span>bijen aan het werk</span></li>
+              <li><a href="afbeeldingen/galerij/bijen-3.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/bijen-3-klein.webp" alt="Een stuk raathoning op een bord" width="360" height="217" loading="lazy" /></a><span>raathoning</span></li>
+              <li><a href="afbeeldingen/galerij/bijen-4.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/bijen-4-klein.webp" alt="Raathoning wordt van het bord gelepeld" width="360" height="217" loading="lazy" /></a><span>smullen maar</span></li>
+            </ul>
           </div>
-          <div class="farm-list__item" id="moestuin">
-            <h3>Onze moestuin</h3>
-            <p>Op een beperkte oppervlakte moestuin en een serre slagen we erin om zo goed als het ganse jaar door eigen groenten te kweken.</p>
+          <div class="farm-list__item has-photos" id="moestuin">
+            <div class="farm-list__text">
+              <h3>Onze moestuin</h3>
+              <p>Op een beperkte oppervlakte moestuin en een serre slagen we erin om zo goed als het ganse jaar door eigen groenten te kweken.</p>
+              <a class="photo-link" href="#fotos-moestuin" data-gallery="fotos-moestuin">Bekijk foto's <span class="photo-link__count">(6)</span></a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-moestuin" data-gallery="fotos-moestuin" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/moestuin-1-klein.webp" alt="" width="360" height="217" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-moestuin" data-title="Onze moestuin" aria-label="Foto's: onze moestuin">
+              <li><a href="afbeeldingen/galerij/moestuin-1.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-1-klein.webp" alt="De moestuin met tunnelboogjes, fruitstruiken en een houten hekje" width="360" height="217" loading="lazy" /></a><span>de moestuin</span></li>
+              <li><a href="afbeeldingen/galerij/moestuin-2.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-2-klein.webp" alt="Kolen, sla en jonge plantjes in de serre" width="360" height="217" loading="lazy" /></a><span>groenten in de serre</span></li>
+              <li><a href="afbeeldingen/galerij/moestuin-3.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-3-klein.webp" alt="Een volle rij groenten in de groentetuin" width="360" height="217" loading="lazy" /></a><span>de groentetuin</span></li>
+              <li><a href="afbeeldingen/galerij/moestuin-4.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-4-klein.webp" alt="Bessenstruiken en bloemen in de moestuin, met bijenkasten aan de rand" width="360" height="217" loading="lazy" /></a><span>rond de moestuin</span></li>
+              <li><a href="afbeeldingen/galerij/moestuin-5.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-5-klein.webp" alt="Een bloemenweide met klaprozen onder de bomen, met een kippenhok en bijenkasten achteraan" width="360" height="217" loading="lazy" /></a><span>de bloemenwei</span></li>
+              <li><a href="afbeeldingen/galerij/moestuin-6.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/moestuin-6-klein.webp" alt="Zomeroogst in bakken: tomaten, kerstomaatjes, sla, paprika, courgette en een pompoen" width="360" height="217" loading="lazy" /></a><span>zomeroogst</span></li>
+            </ul>
           </div>
-          <div class="farm-list__item" id="aardappelen">
-            <h3>De aardappelen</h3>
-            <p>Onze aardappelsoorten: Nicola, Vitabella en Alouette.</p>
+          <div class="farm-list__item has-photos" id="aardappelen">
+            <div class="farm-list__text">
+              <h3>De aardappelen</h3>
+              <p>Onze aardappelsoorten: Nicola, Vitabella en Alouette.</p>
+              <a class="photo-link" href="#fotos-aardappelen" data-gallery="fotos-aardappelen">Bekijk foto's <span class="photo-link__count">(4)</span></a>
+            </div>
+            <a class="farm-list__thumb" href="#fotos-aardappelen" data-gallery="fotos-aardappelen" tabindex="-1" aria-hidden="true"><img src="afbeeldingen/galerij/aardappelen-1-klein.webp" alt="" width="360" height="217" loading="lazy" /></a>
+            <ul class="topic-photos" id="fotos-aardappelen" data-title="De aardappelen" aria-label="Foto's: de aardappelen">
+              <li><a href="afbeeldingen/galerij/aardappelen-1.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/aardappelen-1-klein.webp" alt="Bio-aardappelen Nicola in een papieren zak" width="360" height="217" loading="lazy" /></a><span>bio-Nicola</span></li>
+              <li><a href="afbeeldingen/galerij/aardappelen-2.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/aardappelen-2-klein.webp" alt="Een bak vol aardappelen met de naam ’t Kleinhof erop" width="360" height="217" loading="lazy" /></a><span>aardappelen</span></li>
+              <li><a href="afbeeldingen/galerij/aardappelen-3.webp" data-width="830" data-height="500"><img src="afbeeldingen/galerij/aardappelen-3-klein.webp" alt="Aardappelen rooien met de tractor" width="360" height="217" loading="lazy" /></a><span>aardappelen rooien</span></li>
+              <li><a href="afbeeldingen/galerij/aardappelen-4.webp" data-width="720" data-height="811"><img src="afbeeldingen/galerij/aardappelen-4-klein.webp" alt="Achter de rooier op het aardappelveld" width="320" height="360" loading="lazy" /></a><span>rooien</span></li>
+            </ul>
           </div>
         </div>
       </div>

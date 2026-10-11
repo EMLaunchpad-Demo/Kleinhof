@@ -1,0 +1,55 @@
+TITLE: Producten reserveren | 't Kleinhof Vechmaal
+DESC: Reserveer bio rundsvleespakketten, bio weide-eieren, aardappelen en ajuin van 't Kleinhof. Geen voorafbetaling, je betaalt bij afhaling.
+---
+    <header class="page-head">
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Home</a> / Reserveren</div>
+        <h1>Producten reserveren</h1>
+        <p class="intro">Bio rundsvleespakketten, weide-eieren, aardappelen en ajuin van de boerderij. Geen voorafbetaling: je betaalt bij afhaling.</p>
+        <ol class="steps mt-2">
+          <li><h3>Kies je producten</h3><p>Je ziet meteen wat er nog beschikbaar is.</p></li>
+          <li><h3>Vul je gegevens in</h3><p>Na je reservering houden we je op de hoogte via e-mail.</p></li>
+          <li><h3>Afhalen en betalen</h3><p>Je haalt af in Vechmaal en betaalt bij afhaling.</p></li>
+        </ol>
+      </div>
+    </header>
+
+    <section class="section" id="reserveren-app" style="padding-top:1rem">
+      <div class="container res-layout">
+        <aside class="res-notes">
+          <div>
+            <h4>Afhalen</h4>
+            <p>Brugstraat 2a, 3870 Vechmaal</p>
+          </div>
+          <div>
+            <h4>Volgens het seizoen</h4>
+            <p>Ons productaanbod verschilt sterk per seizoen. Niet gevonden wat je zoekt? <a class="text-link" href="index.html#nieuwsbrief">Schrijf je in op de nieuwsbrief</a>.</p>
+          </div>
+          <div>
+            <h4>Vragen?</h4>
+            <p>Bel Gert op <a class="text-link" href="tel:+32476537938">0476 53 79 38</a> of mail naar <a class="text-link" href="mailto:info@kleinhof.be">info@kleinhof.be</a>.</p>
+          </div>
+        </aside>
+
+        <div class="res-frame">
+          <p class="res-frame__loading" aria-hidden="true">Producten laden…</p>
+          <!-- ===== RESERVERINGSSYSTEEM (zelfde app als op kleinhof.be) =====
+               De hoogte past zich automatisch aan via het bericht 'kleinhof:resize'
+               (zie scripts.js). Plak je dit los in GoHighLevel, gebruik dan dit blok:
+
+               <iframe id="kleinhof" src="https://bio-reservering.vibepreview.app" width="100%"
+                 style="border:0; display:block;" scrolling="no" loading="lazy"></iframe>
+               <script>
+                 window.addEventListener('message', function (e) {
+                   var d = e.data || {};
+                   if (d.type === 'kleinhof:resize') {
+                     var f = document.getElementById('kleinhof');
+                     if (f) f.style.height = d.height + 'px';
+                   }
+                 });
+               </script>
+          -->
+          <iframe id="kleinhof" src="https://bio-reservering.vibepreview.app" title="Reserveringssysteem 't Kleinhof: bio vlees, eieren en groenten" width="100%" scrolling="no" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>

@@ -2,6 +2,8 @@
 
 Zelfde huisstijl en teksten als kleinhof.be (appelgroen logo, Fraunces + Nunito Sans, handgeschreven accent zoals het logo), in een rustige, ambachtelijke opmaak: foto's in de hoofdrol, gewone tekstkolommen en dunne lijnen.
 
+Achtergrond, bronnen, ontwerpkeuzes, Cloudflare en openstaande punten: zie [PROJECT-NOTITIES.md](PROJECT-NOTITIES.md).
+
 ## Bestanden
 
 | Bestand | Inhoud |
