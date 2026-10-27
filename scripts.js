@@ -66,11 +66,12 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ---------- Formuliervalidatie (demo-formulieren) ---------- */
+  /* ---------- Formuliervalidatie ---------- */
+  /* Formulieren met data-extern (nieuwsbrief via Mailchimp) worden na de controle echt verstuurd;
+     de andere zijn nog demo's en tonen alleen de bedanking. */
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   document.querySelectorAll('form[data-validate]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
       var ok = true;
       form.querySelectorAll('[required]').forEach(function (input) {
         var field = input.closest('.field');
@@ -79,6 +80,7 @@
         if (field) field.classList.toggle('has-error', !valid);
         if (!valid && ok) { input.focus(); ok = false; }
       });
+      if (!ok || !form.hasAttribute('data-extern')) e.preventDefault();
       if (ok) form.classList.add('is-sent');
     });
     form.querySelectorAll('input, textarea').forEach(function (input) {

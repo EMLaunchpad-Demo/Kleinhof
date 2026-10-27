@@ -176,23 +176,18 @@
           <h2>Blijf op de hoogte</h2>
           <p class="mt-1">Ons productaanbod verschilt sterk per seizoen. Via de nieuwsbrief blijf je altijd op de hoogte van nieuwe producten in ons aanbod.</p>
         </div>
-        <!-- Demoformulier. In GoHighLevel: vervang door de embedcode van je GHL-nieuwsbriefformulier. -->
-        <form class="form" data-validate novalidate>
-          <div class="form-row">
-            <div class="field">
-              <label for="nb-naam">Naam</label>
-              <input id="nb-naam" name="naam" type="text" autocomplete="name" required />
-              <span class="field__err">Vul je naam in.</span>
-            </div>
-            <div class="field">
-              <label for="nb-email">E-mailadres</label>
-              <input id="nb-email" name="email" type="email" autocomplete="email" required />
-              <span class="field__err">Vul een geldig e-mailadres in.</span>
-            </div>
+        <!-- Inschrijving op de Mailchimp-lijst van 't Kleinhof (dezelfde lijst als eepurl.com/c5XNBj). Mailchimp rondt af in een nieuw tabblad. -->
+        <form class="form" action="https://kleinhof.us16.list-manage.com/subscribe/post?u=d6b5e772ab05404ce36f036de&amp;id=49fa42a588" method="post" target="_blank" data-validate data-extern novalidate>
+          <div class="field">
+            <label for="nb-email">E-mailadres</label>
+            <input id="nb-email" name="EMAIL" type="email" autocomplete="email" required />
+            <span class="field__err">Vul een geldig e-mailadres in.</span>
           </div>
+          <input type="hidden" name="gdpr[2955]" value="Y" />
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_d6b5e772ab05404ce36f036de_49fa42a588" tabindex="-1" value="" /></div>
           <button class="btn" type="submit">Inschrijven</button>
-          <p class="form__note">Je gegevens worden enkel gebruikt voor onze nieuwsbrief. Zie ons <a class="text-link" href="privacy.html">privacybeleid</a>.</p>
-          <div class="form-success">Bedankt, je bent ingeschreven op de nieuwsbrief.</div>
+          <p class="form__note">We versturen de nieuwsbrief via Mailchimp. Uitschrijven kan onderaan elke nieuwsbrief. Zie ons <a class="text-link" href="privacy.html">privacybeleid</a>.</p>
+          <div class="form-success">Bedankt. Rond je inschrijving af in het venster van Mailchimp dat net openging. Krijg je daarna een mail, klik dan op de link om te bevestigen.</div>
         </form>
       </div>
     </section>

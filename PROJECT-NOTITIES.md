@@ -92,7 +92,8 @@ In de map `afbeeldingen/` (van de oude site, 830x500): `hooien.jpg`, `ploegen.jp
   - het script zet de header en footer van `index.html` eromheen.
   - Werkwijze: menu of footer aanpassen in `index.html` → `python _bouw/build.py` draaien. Pas inhoud van een subpagina aan in `_bouw/pages/`, **niet** rechtstreeks in de html-bestanden in de hoofdmap (die worden overschreven).
 - Zorg-boerderij heeft geen eigen pagina (er bestaat geen inhoud voor). Het is een blok op de homepage (`index.html#zorg-boerderij`) met het nummer van Liesbeth.
-- Het nieuwsbrief- en contactformulier zijn **demo's**: ze controleren de velden, maar versturen niets. Koppel ze nog aan een GHL-formulier (embedcode) of een andere formulierdienst.
+- **Nieuwsbrief (27/10/2026):** de nieuwsbrief loopt nog altijd via Mailchimp (Martijn). Het formulier op de home post naar de Mailchimp-lijst van 't Kleinhof (`u=d6b5e772ab05404ce36f036de`, `id=49fa42a588`, dezelfde lijst als de oude link eepurl.com/c5XNBj), met alleen een e-mailveld (de lijst heeft geen naamveld), de marketingtoestemming `gdpr[2955]=Y` en het honeypotveld van Mailchimp. Mailchimp opent in een nieuw tabblad (captcha en eventueel bevestigingsmail). De directe JSON-koppeling (`post-json`) geeft een 404, dus die gebruiken we niet. Het privacybeleid vermeldt Mailchimp.
+- Het **contactformulier** is nog een **demo**: het controleert de velden, maar verstuurt niets. Koppel het nog aan een echte dienst.
 - De contactpagina gebruikt een Google Maps-iframe van Brugstraat 2a, 3870 Vechmaal.
 
 ## 9. Online zetten via Cloudflare Pages
@@ -112,7 +113,8 @@ In de map `afbeeldingen/` (van de oude site, 830x500): `hooien.jpg`, `ploegen.jp
 
 ## 11. Openstaande punten
 - [ ] Cloudflare Pages koppelen en het reserveringssysteem daar testen.
-- [ ] Formulieren (nieuwsbrief, contact) koppelen aan een echte dienst.
+- [x] Nieuwsbrief koppelen aan Mailchimp (27/10/2026).
+- [ ] Contactformulier koppelen aan een echte dienst (staat live als demo: bezoekers zien een bedanking, maar er komt niets binnen).
 - [ ] Extra foto's van de boerderij vragen aan Liesbeth & Gert (vooral hoogstamweide en Bio-kast; liefst groter dan 830 px).
 - [ ] Beslissen of de zorg-boerderij een eigen pagina krijgt (tekst nodig van Liesbeth).
 - [ ] Beslissen wat er met de lege pagina's van de live site gebeurt (eieren, aardappelen, vleesverkoop, groenten en fruit, updates, FAQ). In de nieuwe footer verwijzen de productlinks naar de reserveringspagina.
